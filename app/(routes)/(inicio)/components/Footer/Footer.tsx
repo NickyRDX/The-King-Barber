@@ -18,7 +18,7 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <h3 className="text-white font-bold uppercase mb-5 tracking-wider">
+            <h3 className="text-white font-bold uppercase mb-5 tracking-wider decoration-1 underline-offset-2 underline">
               Enlaces Rapidos
             </h3>
             <ul className="flex flex-col gap-3">
@@ -57,8 +57,8 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-white font-bold uppercase mb-6 tracking-wider">
-              Hours
+            <h3 className="text-white font-bold uppercase mb-6 tracking-wider underline decoration-1 underline-offset-2">
+              Horarios
             </h3>
             <ul className="flex flex-col gap-3 text-sm text-gray-500">
               <li className="flex justify-between">
@@ -76,8 +76,8 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-white font-bold uppercase mb-6 tracking-wider">
-              Contact
+            <h3 className="text-white font-bold uppercase mb-6 tracking-wider decoration-1 underline-offset-2 underline">
+              Contactos
             </h3>
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3 text-gray-500 text-sm">
