@@ -6,10 +6,10 @@ import { Facebook, Instagram, LocationEdit, PhoneCall } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="bg-[#150f09] border-t border-[#493622] py-12">
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center-safe gap-2 mb-6">
+            <div className="flex items-center-safe mb-6">
               <Logo />
             </div>
             <p className="text-slate-500 text-sm leading-relaxed">

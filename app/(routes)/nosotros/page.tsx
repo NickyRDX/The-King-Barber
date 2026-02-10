@@ -1,0 +1,126 @@
+"use client";
+import Navegacion from "../(inicio)/components/Navegacion/Navegacion";
+import Footer from "../(inicio)/components/Footer/Footer";
+import { History } from "lucide-react";
+import { useEffect, useState } from "react";
+import barberoEnAccion from "@/public/images/previewAction.png";
+import Image from "next/image";
+export default function NosotrosPage() {
+  const [realizados, setRealizados] = useState<number>(0);
+  const [barber, setBarber] = useState<number>(0);
+
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      setRealizados((prev) => {
+        // "prev" es el valor más actual del contador "realizados" justo cuando el intervalo corre.
+        // Si todavía es menor que 10, sube en 1. Si ya es 10, se queda igual.
+        if (prev < 10) {
+          return prev + 1;
+        }
+        return prev;
+      });
+    }, 1000);
+    // Limpia el intervalo al desmontar el componente
+    return () => clearInterval(intervalo);
+  }, []);
+  useEffect(() => {
+    const intervalo2 = setInterval(() => {
+      setBarber((prev2) => {
+        if (prev2 < 8) {
+          return prev2 + 1;
+        }
+        return prev2;
+      });
+    }, 1200);
+    return () => clearInterval(intervalo2);
+  }, []);
+  return (
+    <>
+      <Navegacion />
+      <main className="grow">
+        <section className="relative h-[500px] flex items-center-safe justify-center-safe py-20 px-4">
+          <div
+            className="absolute inset-0 bg-cover bg-center z-0"
+            style={{ backgroundImage: "url('/images/heroImagen2.png')" }}
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-black via-orange-700/20 to-transparent z-10" />
+          <div className="relative z-20 flex flex-col items-center-safe text-center gap-6 max-w-3xl mx-auto animate-fade-in-up">
+            <span className="text-pretty text-primary font-bold tracking-[0.2em] uppercase text-sm">
+              SMT.2026
+            </span>
+            <h2 className="text-5xl md:text-7xl font-black tracking-tight text-white mb-2">
+              Nuestro <span className="text-primary">Legado</span>
+            </h2>
+            <p className="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-2xl">
+              Más que un simple corte. Redefinimos la experiencia del cuidado
+              personal con tradición, precisión y estilo moderno.
+            </p>
+            <div className="w-24 h-1 bg-primary rounded-full mt-3" />
+          </div>
+        </section>
+        <section className="py-20 px-6 md:px-16 lg:px-40">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center-safe">
+            <div className="flex flex-col gap-8 order-2 lg:order-1">
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center gap-2 text-orange-400 font-bold uppercase tracking-wider text-xs">
+                  <History />
+                  <span>El comienzo</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+                  Todo empezó con una sola silla
+                </h2>
+                <p className="text-slate-500 text-lg leading-relaxed">
+                  Fundada en 2015 por el maestro barbero James "The King"
+                  Sterling, nuestra peluquería comenzó como un modesto local en
+                  un garaje. La visión era simple: recuperar el arte perdido del
+                  corte de pelo para caballeros, integrándolo con técnicas
+                  contemporáneas.
+                </p>
+                <p className="text-slate-500 text-lg leading-relaxed">
+                  Hoy, somos un colectivo de artesanos apasionados. No solo
+                  cortamos el cabello; cultivamos la confianza. Cada corte está
+                  calculado, cada desvanecimiento es un gradiente de perfección,
+                  y cada cliente se va sintiéndose como un rey.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-6 mt-4">
+                <div className="flex flex-col gap-2 p-4 rounded-lg bg-[#342618]/50 border border-[#493622]">
+                  <span className="text-4xl font-black text-orange-500">
+                    {realizados}k+
+                  </span>
+                  <span className="text-sm text-slate-400 uppercase tracking-wider font-semibold">
+                    Cortes Realizados
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2 p-4 rounded-lg bg-[#342618]/50 border border-[#493622]">
+                  <span className="text-4xl font-black text-orange-500">
+                    {barber}
+                  </span>
+                  <span className="text-sm text-slate-400 uppercase tracking-wider font-semibold">
+                    Maestros Barberos
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2 group relative">
+              <div className="absolute -inset-4 bg-primary/30 rounded-2xl rotate-3 group-hover:rotate-6 transition-transform duration-500" />
+              <div className="relative h-[500px] w-full rounded-xl overflow-hidden shadow-2xl">
+                <Image
+                  src={barberoEnAccion}
+                  alt="Barbero en acción"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-red-700/80 to-transparent p-6">
+                  <p className="text-white font-medium italic">
+                    "La precisión no es un acto, es un hábito."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
