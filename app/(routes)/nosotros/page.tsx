@@ -1,11 +1,13 @@
 "use client";
 import Navegacion from "../(inicio)/components/Navegacion/Navegacion";
 import Footer from "../(inicio)/components/Footer/Footer";
-import { History } from "lucide-react";
+import { ArrowRight, History } from "lucide-react";
 import { useEffect, useState } from "react";
 import barberoEnAccion from "@/public/images/previewAction.png";
 import Image from "next/image";
 import { NosotrosDato } from "./nosotros.data";
+import { Button } from "@/components/ui/button";
+import { BarberData } from "./barber.data";
 export default function NosotrosPage() {
   const [realizados, setRealizados] = useState<number>(0);
   const [barber, setBarber] = useState<number>(0);
@@ -146,6 +148,49 @@ export default function NosotrosPage() {
                   <p className="text-slate-400 leading-relaxed">
                     {descripcion}
                   </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="py-24 px-6 md:px-16 lg:px-40">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-end-safe mb-12 gap-6">
+              <div>
+                <span className="text-primary font-bold tracking-wider text-sm mb-2 block">
+                  Nuestro Talento
+                </span>
+                <h2 className="text-4xl md:text-5xl font-black text-slate-200">
+                  Conoce a los reyes
+                </h2>
+              </div>
+              <Button className="flex items-center-safe gap-2 text-white transition-colors font-semibold group cursor-pointer">
+                ver todo el equipo
+                <ArrowRight size={40} />
+              </Button>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {BarberData.map(({ id, nombre, cargo, imagen }) => (
+                <div
+                  key={id.toString()}
+                  className="group relative overflow-hidden rounded-md aspect-3/4"
+                >
+                  <Image
+                    src={imagen}
+                    alt={nombre}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-500 group-hover:scale-110"
+                    width={600}
+                    height={600}
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                  <div className="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-2xl font-bold text-white mb-1">
+                      {nombre}
+                    </h3>
+                    <p className="text-primary font-medium text-sm uppercase tracking-wider mb-3">
+                      {cargo}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
