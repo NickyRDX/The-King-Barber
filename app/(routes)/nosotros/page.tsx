@@ -5,6 +5,7 @@ import { History } from "lucide-react";
 import { useEffect, useState } from "react";
 import barberoEnAccion from "@/public/images/previewAction.png";
 import Image from "next/image";
+import { NosotrosDato } from "./nosotros.data";
 export default function NosotrosPage() {
   const [realizados, setRealizados] = useState<number>(0);
   const [barber, setBarber] = useState<number>(0);
@@ -116,6 +117,37 @@ export default function NosotrosPage() {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+        <section className="py-20 border-y border-[#493622] bg-[#342618]">
+          <div className="max-w-6xl mx-auto px-6 md:px-16">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary/80">
+                Refinando al caballero moderno
+              </h2>
+              <p className="text-slate-400 max-w-2xl mx-auto">
+                Nuestra filosofía se basa en tres pilares que definen cada
+                interacción dentro de nuestras paredes.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {NosotrosDato.map(({ titulo, id, descripcion, icono: Icon }) => (
+                <div
+                  className="group p-8 rounded-lg bg-[#231a10] border border-[#493622] hover:border-primary/50 transition-all duration-500 hover:-translate-y-2"
+                  key={id}
+                >
+                  <div className="size-14 rounded-full bg-[#342618] flex items-center-safe justify-center-safe mb-5 group-hover:bg-orange-400/20 transition-colors duration-500 text-orange-500">
+                    <Icon />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">
+                    {titulo}
+                  </h3>
+                  <p className="text-slate-400 leading-relaxed">
+                    {descripcion}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

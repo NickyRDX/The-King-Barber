@@ -34,7 +34,7 @@ export default function Hero() {
                 asChild
                 className="flex items-center-safe justify-center-safe rounded-lg h-12 px-8 bg-primary hover:text-black transition-all text-[#231a10] text-base font-black uppercase tracking-wider shadow-xl"
               >
-                <Link href={`#`}>Reservar Ahora!</Link>
+                <Link href={`/reservar`}>Reservar Ahora!</Link>
               </Button>
 
               <Button
@@ -42,7 +42,7 @@ export default function Hero() {
                 variant="ghost"
                 className="flex items-center justify-center rounded-lg h-12 px-8 bg-transparent border border-white/20 transition-all text-white text-base font-medium uppercase tracking-wider cursor-pointer"
               >
-                <Link href={`#`}>Ver Servicios</Link>
+                <Link href={`/servicios`}>Ver Servicios</Link>
               </Button>
             </div>
           </div>

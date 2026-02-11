@@ -60,17 +60,17 @@ export default function Footer() {
             <h3 className="text-white font-bold uppercase mb-6 tracking-wider underline decoration-1 underline-offset-2">
               Horarios
             </h3>
-            <ul className="flex flex-col gap-3 text-sm text-gray-500">
+            <ul className="flex flex-col space-y-4 text-sm text-gray-500">
               <li className="flex justify-between">
-                <span>Lun - Vie</span>{" "}
+                <span className='mr-2'>Lun - Vie</span>{" "}
                 <span className="text-white">9:00 AM - 8:00 PM</span>
               </li>
               <li className="flex justify-between">
-                <span>Sabados</span>{" "}
+                <span className='mr-2'>Sabados</span>{" "}
                 <span className="text-white">10:00 AM - 6:00 PM</span>
               </li>
               <li className="flex justify-between">
-                <span>Domingo</span>{" "}
+                <span className='mr-0'>Domingo</span>{" "}
                 <span className="text-orange-300">Closed</span>
               </li>
             </ul>

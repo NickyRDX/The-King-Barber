@@ -1,10 +1,8 @@
 "use client";
-import React from "react";
 import Link from "next/link";
 import Logo from "../Logo/Logo";
 import { NavData } from "./Nav.data";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft } from "lucide-react";
 import Sidebar from "../Sidebar/Sidebar";
 import { usePathname } from "next/navigation";
 export default function Navegacion() {
@@ -36,10 +34,10 @@ export default function Navegacion() {
               ))}
             </div>
             <div className="flex items-center gap-4">
-              <Button className="hidden md:flex cursor-pointer items-center justify-center-safe rounded-full h-10 px-6 uppercase">
-                reservar ahora
+              <Button asChild className="hidden md:flex cursor-pointer items-center justify-center-safe rounded-full h-10 px-6 uppercase">
+                <Link href={`/reservar`}>reservar ahora</Link>
               </Button>
-              <div className="md:hidden ">
+              <div className="lg:hidden ">
                 <Sidebar />
               </div>
             </div>
