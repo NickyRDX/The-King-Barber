@@ -8,6 +8,7 @@ import Image from "next/image";
 import { NosotrosDato } from "./nosotros.data";
 import { Button } from "@/components/ui/button";
 import { BarberData } from "./barber.data";
+import Link from "next/link";
 export default function NosotrosPage() {
   const [realizados, setRealizados] = useState<number>(0);
   const [barber, setBarber] = useState<number>(0);
@@ -193,6 +194,32 @@ export default function NosotrosPage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+        <section className="relative py-24 overflow-hidden">
+          <div className="absolute inset-0 bg-[#342618] z-0" />
+          <div className="absolute bottom-0 top-0 right-0 w-1/2 h-full bg-primary/40 -skew-x-12 translate-x-1/4" />
+          <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <h2 className="text-white text-4xl md:text-5xl font-black mb-6 tracking-tighter">
+              Estás listo para lucir lo mejor posible?
+            </h2>
+            <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+              Reserva tu lugar. Experimenta la diferencia de un corte King
+              Barber hoy mismo.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button asChild className="w-full sm:w-auto px-8 py-4 font-bold text-lg rounded-sm shadow-lg shadow-primary/40 cursor-pointer">
+                <Link href={`/reservar`}>Reservar cita</Link>
+              </Button>
+
+              <Button
+                asChild
+                variant="secondary"
+                className="w-full sm:w-auto px-8 py-4 font-bold text-lg rounded-sm cursor-pointer shadow-lg"
+              >
+                <Link href={`/servicios`}>Ver servicios</Link>
+              </Button>
             </div>
           </div>
         </section>
