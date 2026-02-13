@@ -11,7 +11,7 @@ export default function Cta() {
       />
       <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
         <h2 className="text-white text-4xl md:text-6xl font-black tracking-tight text-pretty">
-          Ready for your new look
+          Listo para tu nuevo look?
         </h2>
         <p className="text-slate-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
           No te conformes con lo común. Reserva tu cita hoy y experimenta la
