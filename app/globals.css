@@ -123,3 +123,142 @@ html, body{
   min-height: 100dvh;
   overflow-x: hidden;
 }
+
+/* ===== Barber Calendar Theme ===== */
+
+/* Root: transparent bg, sin padding, ancho completo */
+.barber-calendar {
+  background: transparent !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.barber-calendar .rdp-months {
+  width: 100%;
+}
+
+.barber-calendar .rdp-month {
+  width: 100%;
+}
+
+/* Botones de navegación (flechas prev/next) */
+.barber-calendar .rdp-button_previous,
+.barber-calendar .rdp-button_next {
+  color: rgba(255, 255, 255, 0.5) !important;
+  background: transparent !important;
+  border-radius: 0.5rem;
+  transition: color 0.2s, background 0.2s;
+}
+
+.barber-calendar .rdp-button_previous:hover,
+.barber-calendar .rdp-button_next:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Título mes/año */
+.barber-calendar .rdp-caption_label {
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+@media (min-width: 640px) {
+  .barber-calendar .rdp-caption_label {
+    font-size: 1.2rem;
+  }
+}
+
+/* Encabezados de días de la semana */
+.barber-calendar .rdp-weekday {
+  color: rgba(255, 255, 255, 0.35) !important;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding-bottom: 0.5rem;
+}
+
+/* Filas de semanas */
+.barber-calendar .rdp-week {
+  margin-top: 0.125rem;
+}
+
+/* Celdas de día (td) */
+.barber-calendar .rdp-day {
+  border-radius: 9999px;
+}
+
+/* Botones de día */
+.barber-calendar .rdp-day button {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500;
+  border-radius: 9999px !important;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.barber-calendar .rdp-day button:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #fff !important;
+}
+
+/* Días fuera del mes actual */
+.barber-calendar .rdp-outside button {
+  color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.barber-calendar .rdp-outside button:hover {
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Día de hoy (cuando NO está seleccionado) */
+.barber-calendar .rdp-today {
+  background: transparent !important;
+}
+
+.barber-calendar .rdp-today button:not([data-selected-single="true"]):not([data-range-start="true"]):not([data-range-end="true"]) {
+  background: rgba(212, 120, 26, 0.1) !important;
+  color: #D4781A !important;
+}
+
+/* Día seleccionado / inicio-fin de rango — circulo naranja con anillo */
+.barber-calendar .rdp-day button[data-selected-single="true"],
+.barber-calendar .rdp-day button[data-range-start="true"],
+.barber-calendar .rdp-day button[data-range-end="true"] {
+  background: #D4781A !important;
+  color: #fff !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 0 0 3px #2a1f14, 0 0 0 5px #D4781A;
+}
+
+/* Celdas td de inicio/fin de rango — sin fondo accent */
+.barber-calendar .rdp-range_start,
+.barber-calendar .rdp-range_end {
+  background: transparent !important;
+  border-radius: 9999px !important;
+}
+
+/* Celdas td de rango medio */
+.barber-calendar .rdp-range_middle {
+  background: rgba(212, 120, 26, 0.08) !important;
+  border-radius: 0 !important;
+}
+
+/* Botón de rango medio */
+.barber-calendar .rdp-day button[data-range-middle="true"] {
+  background: transparent !important;
+  color: rgba(212, 120, 26, 0.9) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Días deshabilitados */
+.barber-calendar .rdp-disabled button {
+  color: rgba(255, 255, 255, 0.1) !important;
+  cursor: not-allowed;
+}
+
+.barber-calendar .rdp-disabled button:hover {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.1) !important;
+}

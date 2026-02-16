@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Navegacion from "./components/Navegacion/Navegacion";
@@ -15,7 +16,7 @@ export default function Home() {
       <Feature />
       <Galeria />
       <Cta />
-      <Footer/>
+      <Footer />
     </>
   );
 }

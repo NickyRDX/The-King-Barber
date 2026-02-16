@@ -5,9 +5,13 @@ import { NavData } from "./Nav.data";
 import { Button } from "@/components/ui/button";
 import Sidebar from "../Sidebar/Sidebar";
 import { usePathname } from "next/navigation";
+import { LoginLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 export default function Navegacion() {
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
+  const { isAuthenticated } = useKindeBrowserClient();
+
   return (
     <nav className="max-w-full max-h-full px-4 relative mb-20">
       <section className="fixed top-0 left-0 right-0 z-50 bg-[#231a10]/90 backdrop-blur-sm border-b border-[#493622]">
@@ -34,9 +38,26 @@ export default function Navegacion() {
               ))}
             </div>
             <div className="flex items-center gap-4">
-              <Button asChild className="hidden md:flex cursor-pointer items-center justify-center-safe rounded-full h-10 px-6 uppercase">
-                <Link href={`/reservar`}>reservar ahora</Link>
-              </Button>
+              {isAuthenticated ? (
+                <Button
+                  className="hidden md:flex cursor-pointer items-center justify-center-safe rounded-full h-10 px-6 uppercase"
+                  asChild
+                >
+                  <Link className="" href={`/reservar`}>
+                    Reservar ahora
+                  </Link>
+                </Button>
+              ) : (
+                <>
+                  <Button asChild>
+                    <LoginLink>Iniciar Sesion</LoginLink>
+                  </Button>
+                  <Button variant={`outline`} asChild>
+                    <RegisterLink>Registrarse</RegisterLink>
+                  </Button>
+                </>
+              )}
+
               <div className="lg:hidden ">
                 <Sidebar />
               </div>

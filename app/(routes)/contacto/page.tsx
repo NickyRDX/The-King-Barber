@@ -6,10 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -44,14 +41,15 @@ export default function ContactoPage() {
               {/* Encabezado */}
               <div className="mb-8 md:mb-10">
                 <p className="text-orange-400 uppercase tracking-widest text-sm font-semibold mb-3">
-                  Get In Touch
+                  Contáctanos
                 </p>
                 <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-4">
-                  Book Your Throne
+                  Reserva tu trono
                 </h1>
                 <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-lg">
-                  Whether you need a fresh fade or a royal shave, our chairs are
-                  waiting. Send us a message to schedule your next appointment.
+                  Ya sea que necesites un desvanecimiento fresco o un afeitado
+                  impecable, nuestras sillas te esperan. Envíanos un mensaje
+                  para programar tu próxima cita.
                 </p>
               </div>
 
@@ -281,7 +279,6 @@ export default function ContactoPage() {
           </div>
         </section>
       </main>
-
       <Footer />
     </>
   );
