@@ -52,9 +52,6 @@ export default function Navegacion() {
                   <Button asChild>
                     <LoginLink>Iniciar Sesion</LoginLink>
                   </Button>
-                  <Button variant={`outline`} asChild>
-                    <RegisterLink>Registrarse</RegisterLink>
-                  </Button>
                 </>
               )}
 
